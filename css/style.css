@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Patrick+Hand&display=swap');
+
+body {
+    font-family: 'Patrick Hand', cursive;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Kaushan Script', cursive;
+}
+
+.content {
+    position: relative;
+    overflow: hidden;
+}
+
+.content #overlay {
+    position: absolute;
+    top: 150%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(141, 138, 138, 0.7);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    color: rgb(27, 21, 6);
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.content:hover #overlay {
+    top: 0;
+}
+
+.content #overlay h3 {
+    width: 100%;
+}
+
+.card {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.cardPreview {
+    cursor: pointer;
+}
+
+#details {
+    display: none;
+}
+
+#sideBar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background-color: black;
+    z-index: 99;
+    display: flex;
+
+}
+
+.sideIcons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.sideIcons i {
+    padding: 10px;
+    align-self: center;
+    cursor: pointer;
+}
+
+.sideBar-content {
+    background-color: rgb(51, 50, 53);
+    padding: 20px;
+}
+
+.icoAN {
+    width: 50px;
+    height: 50px;
+    align-self: top;
+    cursor: pointer;
+}
+
+.fa-close {
+    display: none;
+}
+
+#sideBarItems {
+    position: relative;
+}
+
+#sideBarItems li {
+    cursor: pointer;
+    position: relative;
+    top: 100%;
+    transition: all 0.5s;
+}
+
+#sideBarItems li:hover {
+    color: rgba(255, 208, 0, 0.869);
+}
+
+#searchInputs {
+    display: none;
+    position: relative;
+    z-index: 9999;
+}
+
+#categories {
+    display: none;
+}
+
+#ingredientAll {
+    cursor: pointer;
+    position: relative;
+    transition: all 0.5s;
+
+}
+
+#ingredientAll:hover {
+    color: rgba(255, 208, 0, 0.869);
+    background-color: transparent;
+    border-color: transparent;
+}
+
+#ingredientAll i {
+    transition: all 0.5s;
+}
+
+#ingredientAll:hover i {
+    color: rgb(220, 120, 20);
+}
+
+#area {
+    display: none;
+}
+
+::placeholder {
+    color: rgb(182, 119, 31) !important;
+}
+
+#contact {
+    display: none;
+}
+
+#loading {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(41, 41, 41);
+    align-items: center;
+    justify-content: center;
+    z-index: 2222;
+
+}
+.spinner-container {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    margin: 30px auto;
+    overflow: hidden;
+}
+
+.spinner {
+    position: absolute;
+    width: calc(100% - 9.9px);
+    height: calc(100% - 9.9px);
+    border: 5px solid transparent;
+    border-radius: 50%;
+    border-top-color: #e1961d;
+    animation: spin 5s cubic-bezier(0.17, 0.49, 0.96, 0.79) infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+.areas,.ingredients,.ingredients i, .areas i {
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.areas:hover,.ingredients:hover{   
+    color: rgba(255, 208, 0, 0.869);
+}
+
+.areas i:hover ,.ingredients i:hover{
+    color: rgb(220, 120, 20);
+    rotate: 45deg;
+}
