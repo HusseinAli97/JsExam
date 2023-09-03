@@ -135,7 +135,6 @@ function showMeals(List, type) {
                 const foodHTML = ingredients.ingredientMeals(listItem);
                 yummy.mealsContainer.append(foodHTML);
             }    else if (type === "categoryMeals") {
-                console.log(listItem);
                 const foodHTML = category.categoryMeals(listItem);
                 yummy.mealsContainer.append(foodHTML);
             }   else if (type === "search") {
