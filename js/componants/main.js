@@ -24,55 +24,27 @@ export const yummy = {
             if (res.status !== 200) {
                 throw new Error("Something went wrong");
             }
-
-            let foodList;
+            const { meals, categories } = await res.json();
             switch (type) {
                 case 'meal':
-                    ({ meals: foodList } = await res.json());
-                    showMeals(foodList, 'meal');
-                    break;
-                case 'category':
-                    ({ categories: foodList } = await res.json());
-                    showMeals(foodList, 'category');
-                    break;
                 case 'categoryMeals':
-                    ({ meals: foodList } = await res.json());
-                    showMeals(foodList, 'categoryMeals');
-                    break;
                 case 'area':
-                    ({ meals: foodList } = await res.json());
-                    showMeals(foodList, 'area');
-                    break;
                 case 'areaMeals':
-                    ({ meals: foodList } = await res.json());
-                    showMeals(foodList, 'areaMeals');
-                    break;
                 case 'ingredient':
-                    ({ meals: foodList } = await res.json());
-                    showMeals(foodList, 'ingredient');
-                    break;
                 case 'ingredientMeals':
-                    ({ meals: foodList } = await res.json());
-                    showMeals(foodList, 'ingredientMeals');
+                case 'categoryMeals':
+                case 'category':
+                case 'search':
+                    showMeals(meals?meals:categories,type);
                     break;
                 case 'details':
-                    ({ meals: foodList } = await res.json());
-                    yummy.showDetails(foodList);
-                    break;
-                case 'categoryMeals':
-                    ({ meals: foodList } = await res.json());
-                    showMeals(foodList, 'categoryMeals');
-                    break;
-                case 'search':
-                    ({ meals: foodList } = await res.json());
-                    showMeals(foodList, 'search');
+                    yummy.showDetails(meals);
                     break;
                 default:
                     console.log('Invalid type');
                     break;
             }
         } catch (err) {
-            console.log(err);
         } finally {
             $('#loading').fadeOut(700);
         }
@@ -111,6 +83,7 @@ $('document').ready(function () {
 function showMeals(List, type) {
     yummy.mealsContainer.empty();
     try {
+
         List.forEach((listItem, index) => {
             if (index >= 20) return;
             if (type === "meal") {
@@ -158,7 +131,6 @@ function showMeals(List, type) {
         }
         showIng();
     } catch (err) {
-        console.log(err);
     }
 }
 //? -handle landing page random meals on DOM
