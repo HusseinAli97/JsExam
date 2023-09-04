@@ -3,6 +3,7 @@ import { category } from "./category.js";
 import { search } from "./search.js";
 import { area } from "./area.js";
 import { ingredients } from "./ingredients.js";
+import { signUp } from "./signup.js";
 
 // ? Structure
 //! - in main page show food list with fetching data from api
@@ -176,12 +177,10 @@ function generateFoodHTML(food) {
     `;
 }
 
-
-
-
 search.showSearchPage();
 category.fetchCategory();
 area.fetchArea();
 yummy.backToLanding();
 search.resetResult();
+signUp.showForm();
 ingredients.fetchIngredient();
