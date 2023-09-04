@@ -51,7 +51,7 @@ export const yummy = {
         }
     },
     backToLanding: function () {
-        $('.icoAN , .title').click(function () {
+        $('.icoAN , #Home').click(function () {
             yummy.details.fadeOut(500);
             yummy.fetchFood('search.php?s=', 'meal');
         })

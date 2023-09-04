@@ -28,6 +28,9 @@ h5,
 h6 {
     font-family: var(--font-heading);
 }
+input {
+    color: var(--placeholder-color) !important;
+}
 
 /* ? SideBar Styles */
 
