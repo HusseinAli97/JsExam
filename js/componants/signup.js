@@ -88,18 +88,11 @@ export const signUp = {
             }
         }
         submitBtn.click(() => {
-            uName.val('');
-            uEmail.val('');
-            uPhone.val('');
-            uAddress.val('');
-            uPassword.val('');
-            uCPassword.val('');
-            uName.removeClass('is-valid , is-invalid');
-            uEmail.removeClass('is-valid , is-invalid');
-            uPhone.removeClass('is-valid , is-invalid');
-            uPassword.removeClass('is-valid , is-invalid');
-            uCPassword.removeClass('is-valid , is-invalid');
-            submitBtn.addClass('disabled');
+            const $signUpForm = $('#signUp');
+            const $submitBtn = $signUpForm.find('button');
+            $signUpForm.find('input').val('');
+            $signUpForm.find('input').removeClass('is-valid is-invalid');
+            $submitBtn.addClass('disabled');
         })
     },
     hideSignUpForm:()=>{
