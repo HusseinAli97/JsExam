@@ -19,6 +19,7 @@ body {
     background-position: center;
     background-size: contain;
 }
+
 h1,
 h2,
 h3,
@@ -44,6 +45,7 @@ h6 {
 @media all and (max-width: 768px){
     #sideBar {
         background-color: transparent;
+        background-image: none;
     }
     .bottomIcons {
         display: none !important;
@@ -55,7 +57,8 @@ h6 {
     }
     .fa-close,
     .fa-bars {
-        background-color: #e1961d;
+        background-image: url('../img/side.jpg');
+        background-size: contain;
         border-top-right-radius: 25px;
         border-bottom-right-radius: 25px;
         color: white;
@@ -85,7 +88,7 @@ h6 {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.736), rgba(0, 0, 0, 0.5)), url(../img/bg.jpg);
 }
 
-.icoAN {
+.icoAN, .icoAn2 {
     width: 60px;
     height: 60px;
     align-self: top;
@@ -123,20 +126,24 @@ h6 {
     text-transform: uppercase;
     animation: animate 2s ease-in-out infinite;
     animation-delay: calc(.1s*var(--i));
+
 }
 
 @keyframes animate {
     0% {
         transform: translateY(0px);
         text-shadow: 0 0 0.9em rgba(225, 207, 44, 0.763);;
+        color: #27A2CB;
     }
 
     20% {
         transform: translateY(-20px);
+        color: #BE3D81;
     }
 
     40%,
     100% {
+        color: #FC604F;
         transform: translateY(0px);
         text-shadow: 0 0 0.9em rgba(225, 44, 138, 0.763);;
 
@@ -144,6 +151,7 @@ h6 {
 }
 .title{
     font-size: calc(12px + .09698vw);
+    cursor: pointer;
 }
 
 #sideBarItems li:hover {
