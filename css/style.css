@@ -3,7 +3,7 @@
     --font-heading: 'Kaushan Script', cursive;
     --sidebar-bg-color: black;
     --sidebar-item-hover-color: rgba(255, 208, 0, 0.869);
-    --overlay-bg-color: rgba(141, 138, 138, 0.7);
+    --overlay-bg-color: rgba(16, 15, 15, 0.5);
     --placeholder-color: rgb(220, 120, 20);;
     --spinner-border-color: #e1961d;
     --loading-bg-color: rgb(41, 41, 41);
@@ -178,8 +178,9 @@ h6 {
 .content {
     position: relative;
     overflow: hidden;
-    box-shadow: 0 0 20px rgba(138, 118, 4, 0.719);
-
+}
+.content:not(.category) {
+    box-shadow: 0 0 15px rgba(207, 128, 128, 0.5);
 }
 
 .content #overlay {
@@ -192,7 +193,7 @@ h6 {
     display: flex;
     align-items: center;
     padding: 20px;
-    color: rgb(27, 21, 6);
+    color: white;
     transition: all 0.5s;
     cursor: pointer;
 }
@@ -261,6 +262,11 @@ h6 {
     align-items: center;
     justify-content: center;
     z-index: 2222;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.736), rgba(0, 0, 0, 0.5)), url(../img/bg.jpg);
+    background-attachment: fixed;
+    background-repeat: repeat;
+    background-position: center;
+    background-size: contain;
 }
 
 .spinner-container {
