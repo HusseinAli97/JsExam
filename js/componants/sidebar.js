@@ -1,6 +1,6 @@
+import { yummy } from "./main.js";
 export function sideBarToggel (){
     const sideContentWidth  = $('.sideBar-content').innerWidth();
-    tochSwap();
     $('.fa-bars, .fa-close').click(function() {
         const sideLeft = parseFloat($('#sideBar').css('left'));
         if (sideLeft === 0) {
@@ -31,6 +31,12 @@ function hideSidebar() {
     $('.fa-close').hide();
     $('.fa-bars').show();
 }
+function hidOnClick(){
+    yummy.sideBarItems.click(function(){
+        hideSidebar();
+    })
+}
+hidOnClick();
 function tochSwap(){
     const sideBar = document.getElementById('sideBar'); 
     const af = new AlloyFinger(sideBar, {
@@ -43,9 +49,9 @@ function tochSwap(){
     }
 });
 }
+tochSwap();
+
 window.onload = () => {
     animateSidebar(-sideContentWidth - 2, 700);
 }
-
 }
-sideBarToggel()

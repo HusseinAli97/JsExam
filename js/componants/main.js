@@ -156,6 +156,7 @@ function generateFoodHTML(food) {
         </div>
     `;
 }
+sideBarToggel()
 search.showSearchPage();
 category.fetchCategory();
 area.fetchArea();
