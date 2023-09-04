@@ -75,6 +75,9 @@ export const yummy = {
                 $('#foodSteps').append(`<button class="tags btn btn-outline-warning fs-5 m-2 ">${instructions[0][`strMeasure${i}`]}-${instructions[0][`strIngredient${i}`]} </button>`);
             }
         }
+        this.sideBarItems.click(function () {
+            yummy.details.fadeOut(500);
+        });
     }
 }
 // ?  - call random meals in landing page
