@@ -115,34 +115,6 @@ h6 {
     z-index: 9999;
 }
 
-#categories {
-    display: none;
-}
-
-#ingredientAll {
-    cursor: pointer;
-    position: relative;
-    transition: all 0.5s;
-
-}
-
-#ingredientAll:hover {
-    color: rgba(255, 208, 0, 0.869);
-    background-color: transparent;
-    border-color: transparent;
-}
-
-#ingredientAll i {
-    transition: all 0.5s;
-}
-
-#ingredientAll:hover i {
-    color: rgb(220, 120, 20);
-}
-
-#area {
-    display: none;
-}
 
 ::placeholder {
     color: rgb(182, 119, 31) !important;
