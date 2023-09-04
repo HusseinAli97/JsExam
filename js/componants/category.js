@@ -12,8 +12,8 @@ export const category = {
         desc = desc.substring(0,100);
         return  `
                 <div class="col-md-6 col-lg-4">
-                    <div class="content">
-                        <img src="${img}" class="img-fluid rounded-3 border-0" id="foodImg" alt="">
+                    <div class="content category">
+                        <img src="${img}" class="img-fluid rounded-3 border-0" alt="">
                         <div class="text-white d-flex flex-column justify-content-center" id="overlay" data-cat="${catName}"  >
                             <h3 class="fw-bold text-center" id="foodName">${catName}</h3>
                             <p  class="fs-5 " id="foodDesc">${desc}</p>
@@ -23,11 +23,14 @@ export const category = {
                 
                 `;
     },
-    categorySelector: function(){
-        $('.content').click(function(e){
-            let catName = e.target.closest('#overlay').dataset.cat;
-            yummy.fetchFood(`filter.php?c=${catName}`,'categoryMeals');
-        })
+    catSelector:function(){ 
+        let cat = function(){
+            $('.category #overlay').click(function(e){
+                let catUnique = e.target.closest('#overlay').dataset.cat;
+                yummy.fetchFood(`filter.php?c=${catUnique}`,'categoryMeals');
+            })
+        }
+        cat();
     },
     categoryMeals: function (listItem){
         let {strMeal:name,strMealThumb:img,idMeal:id} = listItem;

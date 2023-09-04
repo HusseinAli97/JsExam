@@ -41,7 +41,9 @@ h6 {
         display: none !important;
     }
     .icoAN {
-        display: none;
+        position: absolute;
+        bottom: 0;
+        margin-left: 25px;
     }
     .fa-close,
     .fa-bars {

@@ -84,7 +84,6 @@ $('document').ready(function () {
 function showMeals(List, type) {
     yummy.mealsContainer.empty();
     try {
-
         List.forEach((listItem, index) => {
             if (index >= 20) return;
             if (type === "meal") {
@@ -119,7 +118,7 @@ function showMeals(List, type) {
         })
         area.areaSelector();
         ingredients.ingredientsSelector();
-        category.categorySelector();
+        category.catSelector();
         let showIng = () =>{
             $('div[data-id]').click(function(e){
                 let mealId = e.target.closest('div').dataset.id;
@@ -132,6 +131,11 @@ function showMeals(List, type) {
         }
         showIng();
     } catch (err) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...No meals found!',
+            text: "Try again!"
+        })
     }
 }
 //? -handle landing page random meals on DOM
