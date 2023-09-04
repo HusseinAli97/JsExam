@@ -21,7 +21,6 @@ export const yummy = {
             $('#loading').show().css('display', 'flex');
             const foodApi = `${yummy.mainUrl}${searchTerm}`;
             const res = await fetch(foodApi);
-
             if (res.status !== 200) {
                 throw new Error("Something went wrong");
             }
@@ -54,7 +53,7 @@ export const yummy = {
                     break;
                 case 'ingredientMeals':
                     ({ meals: foodList } = await res.json());
-                        console.log(foodList);
+                    showMeals(foodList, 'ingredientMeals');
                     break;
                 case 'details':
                     ({ meals: foodList } = await res.json());

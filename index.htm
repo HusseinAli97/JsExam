@@ -19,6 +19,144 @@
 </head>
 
 <body class="bg-dark">
+    <!--! ******************************************************** -->
+
+    <h1 class="text-center text-white py-4">Welcome to Yummy Recipes</h1>
+
+    <!-- Header Sidebar -->
+    <header>
+        <nav class="text-white" id="sideBar">
+            <div class="sideBar-content d-flex flex-column justify-content-between">
+                <ul class="list-unstyled overflow-hidden d-flex flex-column gap-3" id="sideBarItems">
+                    <li><i class="fas fa-magnifying-glass me-2"></i> Search</li>
+                    <li><i class="fas fa-utensils me-2"></i> Categories</li>
+                    <li><i class="fas fa-map-marker-alt me-2"></i> Areas</li>
+                    <li><i class="fas fa-seedling me-2"></i> Ingredients</li>
+                    <li><i class="fas fa-user-plus me-2"></i> Sign Up</li>
+                </ul>
+                <div class="social position-relative">
+                    <a href="#"><i class="fa-brands fa-facebook "></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter "></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram "></i></a>
+                    <p>© 2020 Yummy all rights reserved </p>
+                </div>
+            </div>
+            <div class="sideIcons d-flex justify-content-between py-4">
+                <img src="img/hungry-emoji-11.gif" class="img-fluid icoAN" alt="">
+                <i class="fa fa-bars fa-3x"></i>
+                <i class="fa fa-close fa-3x "></i>
+                <div class="sideIcon flex-column d-flex">
+                    <i class="fa fa-heart "></i>
+                    <i class="fa fa-shopping-cart "></i>
+                </div>
+            </div>
+    
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="text-light position-relative">
+        <div class="container text-center py-5">
+            <!-- Main List -->
+            <section>
+                    <div class="row g-4 " id="foodList">
+                    </div>
+            </section>
+
+            <!-- Search Form -->
+            <section >
+                    <div class="row g-4 justify-content-center" id="searchInputs">
+                        <div class="col-md-4">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Search By Name" name="searchByName">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Search By FristLetter"
+                                    name="searchByLetter">
+                            </div>
+                        </div>
+                        <div class="row g-4 " id="searchResults">
+                        </div>
+                </div>
+            </section>
+
+            <!-- Details -->
+            <section >
+                    <div class="row g-4 mt-4" id="details">
+                        <div class="col-md-4">
+                            <div>
+                                <img src="" class="img-fluid rounded-3 border-0" id="mealImg" alt="">
+                                <h3 class="fw-bold text-start mt-2" id="mealName"></h3>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="diractions ms-2 text-start">
+                                <h2 class=" fw-bold ">Instructions</h2>
+                                <p class="fs-4  mt-3 text-start " id="instruction">
+                                </p>
+                                <div class="info">
+                                    <h3 class="fw-bold mb-4">Area: <span class="fw-lighter" id="area"></span></h3>
+                                    <h3 class="fw-bold mb-4">Category: <span class="fw-lighter" id="category"></span></h3>
+                                    <div class="recipe mb-4">
+                                        <h3 class="fw-bold mb-3">Recipe:</h3>
+                                        <div class="contaiens mb-3" id="foodSteps">
+                                        </div>
+                                    </div>
+                                    <div class="resources ">
+                                        <h3 class="fw-bold mb-3">Resources:</h3>
+                                        <a href="#" class="btn btn-danger me-3 tube" title="Youtube" target="_blank">
+                                            <i class="fa-brands fa-youtube fa-2x"></i>
+                                        </a>
+                                        <a href="#" class="btn btn-primary src" title="View" target="_blank">
+                                            <i class="fa fa-eye fa-2x"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+
+            <!-- Sign Up Form -->
+            <section >
+                    <div class="row g-4 justify-content-center align-items-center vh-100 px-5" id="signUp">
+                        <div class="row g-4 px-4">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control bg-dark text-light border-warning"
+                                    placeholder="Your Name">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control bg-dark text-light border-warning"
+                                    placeholder="Your Email">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control bg-dark text-light border-warning"
+                                    placeholder="Your Phone">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control bg-dark text-light border-warning"
+                                    placeholder="Your Address">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="password" class="form-control bg-dark text-light border-warning"
+                                    placeholder="Your Password">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="password" class="form-control bg-dark text-light border-warning"
+                                    placeholder="Confirm Password">
+                            </div>
+                            <div class="col-md-12">
+                                <button class="btn btn-warning fw-bold disabled">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Loading -->
     <div id="loading">
         <div class="spinner-container">
             <div class="spinner">
@@ -34,119 +172,8 @@
             </div>
         </div>
     </div>
-    <div class="text-white" id="sideBar">
-        <div class="sideBar-content d-flex flex-column justify-content-between">
-            <ul class="list-unstyled overflow-hidden d-flex flex-column gap-3" id="sideBarItems">
-                <li class="fs-5 fw-bold">Search</li>
-                <li class="fs-5 fw-bold">Categories</li>
-                <li class="fs-5 fw-bold">Area</li>
-                <li class="fs-5 fw-bold">Ingredients</li>
-                <li class="fs-5 fw-bold">Contact</li>
-            </ul>
-            <div class="social position-relative">
-                <a href="#"><i class="fa-brands fa-facebook "></i></a>
-                <a href="#"><i class="fa-brands fa-twitter "></i></a>
-                <a href="#"><i class="fa-brands fa-instagram "></i></a>
-                <p>© 2020 Yummy all rights reserved </p>
-            </div>
-        </div>
-        <div class="sideIcons d-flex justify-content-between py-4">
-            <img src="img/hungry-emoji-11.gif" class="img-fluid icoAN" alt="">
-            <i class="fa fa-bars fa-3x"></i>
-            <i class="fa fa-close fa-3x "></i>
-            <div class="sideIcon flex-column d-flex">
-                <i class="fa fa-heart "></i>
-                <i class="fa fa-shopping-cart "></i>
-            </div>
-        </div>
 
-    </div>
-    <section class="text-light position-relative">
-        <div class="container text-center py-5">
-            <div class="row g-4 justify-content-center" id="searchInputs">
-                <div class="col-md-4">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Search By Name" name="searchByName">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Search By FristLetter"
-                            name="searchByLetter">
-                    </div>
-                </div>
-                <div class="row g-4 " id="searchResults">
-                </div>
-            </div>
-            <div class="row g-4  " id="foodList">
-            </div>
-            <div class="row g-4 mt-4" id="details">
-                <div class="col-md-4">
-                    <div>
-                        <img src="" class="img-fluid rounded-3 border-0" id="mealImg" alt="">
-                        <h3 class="fw-bold text-start mt-2" id="mealName"></h3>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <div class="diractions ms-2 text-start">
-                        <h2 class=" fw-bold ">Instructions</h2>
-                        <p class="fs-4  mt-3 text-start " id="instruction">
-                        </p>
-                        <div class="info">
-                            <h3 class="fw-bold mb-4">Area: <span class="fw-lighter" id="area"></span></h3>
-                            <h3 class="fw-bold mb-4">Category: <span class="fw-lighter" id="category"></span></h3>
-                            <div class="recipe mb-4">
-                                <h3 class="fw-bold mb-3">Recipe:</h3>
-                                <div class="contaiens mb-3" id="foodSteps">
-                                </div>
-
-                            </div>
-                            <div class="resources ">
-                                <h3 class="fw-bold mb-3">Resources:</h3>
-                                <a href="#" class="btn btn-danger me-3 tube" title="Youtube" target="_blank">
-                                    <i class="fa-brands fa-youtube fa-2x"></i>
-                                </a>
-                                <a href="#" class="btn btn-primary src" title="View" target="_blank">
-                                    <i class="fa fa-eye fa-2x"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row g-4 justify-content-center align-items-center vh-100 px-5" id="signUp">
-                <div class="row g-4 px-4">
-                    <div class="col-md-6">
-                        <input type="text" class="form-control bg-dark text-light border-warning"
-                            placeholder="Your Name">
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" class="form-control bg-dark text-light border-warning"
-                            placeholder="Your Email">
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" class="form-control bg-dark text-light border-warning"
-                            placeholder="Your Phone">
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" class="form-control bg-dark text-light border-warning"
-                            placeholder="Your Address">
-                    </div>
-                    <div class="col-md-6">
-                        <input type="password" class="form-control bg-dark text-light border-warning"
-                            placeholder="Your Password">
-                    </div>
-                    <div class="col-md-6">
-                        <input type="password" class="form-control bg-dark text-light border-warning"
-                            placeholder="Confirm Password">
-                    </div>
-                    <div class="col-md-12">
-                        <button class="btn btn-warning fw-bold disabled">Submit</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!--! ******************************************************** -->
     <!-- Jquery -->
     <script src="js/jquery-3.7.1.min.js"></script>
     <!-- Bootstrap -->
