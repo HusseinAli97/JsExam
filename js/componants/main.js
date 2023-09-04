@@ -9,6 +9,7 @@ import { signUp } from "./signup.js";
 //! - in main page show food list with fetching data from api
 // -----------------------------------------------------------------------
 // ? -main function for fetching lists
+
 export const yummy = {
     mainUrl: "https://www.themealdb.com/api/json/v1/1/",
     sideBarItems: $("#sideBarItems li"),
@@ -147,7 +148,6 @@ function generateFoodHTML(food) {
         </div>
     `;
 }
-
 search.showSearchPage();
 category.fetchCategory();
 area.fetchArea();

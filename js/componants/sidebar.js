@@ -1,5 +1,6 @@
 export function sideBarToggel (){
     const sideContentWidth  = $('.sideBar-content').innerWidth();
+    tochSwap();
     $('.fa-bars, .fa-close').click(function() {
         const sideLeft = parseFloat($('#sideBar').css('left'));
         if (sideLeft === 0) {
@@ -7,7 +8,9 @@ export function sideBarToggel (){
         } else {
             showSidebar();
         }
+
     });
+
     function animateSidebar(toPosition, duration, callback) {
     $('#sideBar').animate({ left: toPosition }, duration, callback);
 }
@@ -27,6 +30,18 @@ function hideSidebar() {
         animateSidebarItems("100%", 100);});
     $('.fa-close').hide();
     $('.fa-bars').show();
+}
+function tochSwap(){
+    const sideBar = document.getElementById('sideBar'); 
+    const af = new AlloyFinger(sideBar, {
+    swipe: function (evt) {
+        if (evt.direction === 'Right') {
+            showSidebar();
+        } else if (evt.direction === 'Left') {
+            hideSidebar();
+        }
+    }
+});
 }
 window.onload = () => {
     animateSidebar(-sideContentWidth - 2, 700);

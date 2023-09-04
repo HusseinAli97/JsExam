@@ -33,7 +33,28 @@ h6 {
     background-color: var(--sidebar-bg-color);
     z-index: 99;
 }
-
+@media all and (max-width: 768px){
+    #sideBar {
+        background-color: transparent;
+    }
+    .bottomIcons {
+        display: none !important;
+    }
+    .icoAN {
+        display: none;
+    }
+    .fa-close,
+    .fa-bars {
+        background-color: #e1961d;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        color: white;
+        font-size: 1.5rem;
+    }
+    .sideIcons {
+        justify-content: center !important;
+    }
+}
 .sideIcons {
     display: flex;
     flex-direction: column;
@@ -75,6 +96,8 @@ h6 {
     transition: all 0.5s;
     padding: 0 15px;
 }
+
+
 /* ? Highlight sidebar items on hover */
 
 #sideBarItems li:hover {
